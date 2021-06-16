@@ -1,0 +1,361 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-25 14:51+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\pages\apps.py:8
+msgid "pages"
+msgstr "sahifalar"
+
+#: .\pages\models.py:6 .\posts\models.py:7 .\posts\models.py:72
+#: .\templates\contact.html:44
+msgid "name"
+msgstr "ism"
+
+#: .\pages\models.py:7 .\posts\models.py:73 .\templates\contact.html:47
+msgid "email"
+msgstr "pochta"
+
+#: .\pages\models.py:8 .\templates\contact.html:50
+msgid "message"
+msgstr "xabar"
+
+#: .\pages\models.py:16
+msgid "contact"
+msgstr "aloqa"
+
+#: .\pages\models.py:17
+msgid "contacts"
+msgstr "aloqalar"
+
+#: .\posts\apps.py:8 .\posts\models.py:61
+msgid "posts"
+msgstr "xabarlar"
+
+#: .\posts\models.py:8
+msgid "avatar"
+msgstr ""
+
+#: .\posts\models.py:9 .\posts\models.py:21 .\posts\models.py:45
+#: .\products\models.py:11 .\products\models.py:23 .\products\models.py:35
+#: .\products\models.py:47 .\products\models.py:59 .\products\models.py:89
+msgid "created_at"
+msgstr "yaratilgan vaqti"
+
+#: .\posts\models.py:15 .\posts\models.py:39
+msgid "author"
+msgstr "muallif"
+
+#: .\posts\models.py:16
+msgid "authors"
+msgstr "mualliflar"
+
+#: .\posts\models.py:20 .\posts\models.py:32 .\products\models.py:10
+#: .\products\models.py:22 .\products\models.py:34 .\products\models.py:46
+#: .\products\models.py:58 .\products\models.py:70
+msgid "title"
+msgstr "sarlavha"
+
+#: .\posts\models.py:27
+msgid "tag"
+msgstr "teg"
+
+#: .\posts\models.py:28 .\posts\models.py:43 .\products\models.py:87
+msgid "tags"
+msgstr "teglar"
+
+#: .\posts\models.py:33 .\products\models.py:71 .\products\models.py:124
+msgid "image"
+msgstr "rasm"
+
+#: .\posts\models.py:34
+msgid "banner"
+msgstr "banner"
+
+#: .\posts\models.py:35
+msgid "content"
+msgstr "content"
+
+#: .\posts\models.py:60
+msgid "post"
+msgstr "xabar"
+
+#: .\posts\models.py:69
+msgid "comments"
+msgstr "izohlar"
+
+#: .\posts\models.py:74
+msgid "phone"
+msgstr "telefon"
+
+#: .\posts\models.py:75 .\posts\models.py:82
+msgid "comment"
+msgstr "izohlar"
+
+#: .\posts\models.py:76
+#, fuzzy
+#| msgid "created_at"
+msgid "created_on"
+msgstr "yaratilgan vaqti"
+
+#: .\posts\models.py:83
+msgid "commets"
+msgstr "izohlar"
+
+#: .\products\apps.py:8 .\products\models.py:113
+msgid "products"
+msgstr "mahsulotlar"
+
+#: .\products\models.py:17 .\products\models.py:85
+msgid "category"
+msgstr "categorya"
+
+#: .\products\models.py:18
+msgid "categories"
+msgstr "categoryalar"
+
+#: .\products\models.py:29 .\products\models.py:86
+msgid "brand"
+msgstr "brend"
+
+#: .\products\models.py:30
+msgid "brands"
+msgstr "brendlar"
+
+#: .\products\models.py:41
+msgid "product tag"
+msgstr "mahsulot teglari"
+
+#: .\products\models.py:42
+msgid "product tags"
+msgstr "mahsulotlar teglari"
+
+#: .\products\models.py:53
+msgid "size"
+msgstr "razmer"
+
+#: .\products\models.py:54
+msgid "sizes"
+msgstr "razmerlar"
+
+#: .\products\models.py:65
+msgid "color"
+msgstr "rang"
+
+#: .\products\models.py:66
+msgid "colors"
+msgstr "ranglar"
+
+#: .\products\models.py:72
+msgid "price"
+msgstr "narx"
+
+#: .\products\models.py:80
+msgid "discount"
+msgstr "chegirma"
+
+#: .\products\models.py:82
+msgid "short_description"
+msgstr "qisqa malumot"
+
+#: .\products\models.py:83
+msgid "long_description"
+msgstr "uzun malumot"
+
+#: .\products\models.py:112 .\products\models.py:121
+msgid "product"
+msgstr "mahsulot"
+
+#: .\products\models.py:130
+#, fuzzy
+#| msgid "product tag"
+msgid "product image"
+msgstr "mahsulot teglari"
+
+#: .\products\models.py:131
+#, fuzzy
+#| msgid "product tags"
+msgid "product images"
+msgstr "mahsulotlar teglari"
+
+#: .\shop\settings.py:85
+msgid "English"
+msgstr "Englizcha"
+
+#: .\shop\settings.py:86
+#, fuzzy
+#| msgid "Uzbekcha"
+msgid "Uzbek"
+msgstr "uzbekcha"
+
+#: .\shop\settings.py:87
+msgid "Russian"
+msgstr "Ruscha"
+
+#: .\templates\about.html:12 .\templates\about.html:15
+msgid "About Us"
+msgstr "Haqimizda"
+
+#: .\templates\about.html:14 .\templates\layouts\header.html:78
+msgid "Home"
+msgstr "Asosiy"
+
+#: .\templates\about.html:37
+msgid "Who We Are ?"
+msgstr "Biz kimmiz ?"
+
+#: .\templates\about.html:38
+msgid ""
+" Contextual advertising programs sometimes have strict policies that need\n"
+"                            to be adhered too. Let’s take Google as an "
+"example. "
+msgstr ""
+" Kontekstli reklama dasturlarida ba'zida qat'iy qoidalar mavjud bo'lib, "
+"ularga ehtiyoj bor \n"
+"                            ham rioya qilish. Keling, Google-ni an misol. "
+
+#: .\templates\about.html:44
+msgid "Who We Do ?"
+msgstr "Biz kimmiz?"
+
+#: .\templates\about.html:45
+msgid ""
+"In this digital generation where information can be easily obtained within "
+"seconds, business\n"
+"                            cards still have retained their importance. "
+msgstr ""
+"Ma'lumotni osongina olish mumkin bo'lgan ushbu raqamli avlodda soniya, ish \n"
+"                            kartalar hali ham o'z ahamiyatini saqlab qolgan. "
+
+#: .\templates\about.html:51
+msgid "Why Choose Us"
+msgstr "Nega bizni tanlashimiz kerak"
+
+#: .\templates\about.html:52
+msgid ""
+"A two or three storey house is the ideal way to maximise the piece of earth "
+"on which our home\n"
+"                            sits, but for older or infirm people. "
+msgstr ""
+"Ikki yoki uch qavatli uy - bu erning qismini maksimal darajada oshirishning "
+"eng yaxshi usuli bizning uyimiz\n"
+"                            o'tiradi, lekin keksa yoki zaif odamlar uchun. "
+
+#: .\templates\about.html:68
+msgid ""
+"“Going out after work? Take your butane curling iron with you to the office, "
+"heat it up,\n"
+"                            style your hair before you leave the office and "
+"you won’t have to make a trip back home.” "
+msgstr ""
+"“Ishdan keyin ko'chaga chiqayapsizmi? Butan kıvırma temiringizni ofisingizga "
+"olib boring, qizdiring,\n"
+"ofisdan chiqishdan oldin sochlaringizni tarang vauyga qaytishga majbur "
+"bo'lmaysiz."
+
+#: .\templates\about.html:77
+msgid "Fashion Design"
+msgstr "Moda dizayni"
+
+#: .\templates\about.html:139
+msgid "Our Team"
+msgstr "Bizning jamoamiz"
+
+#: .\templates\about.html:140
+msgid "Meet Our Team"
+msgstr "Bizning jamoamiz"
+
+#: .\templates\about.html:184
+msgid "Partner"
+msgstr "Hamkor"
+
+#: .\templates\about.html:185
+msgid "Happy Clients"
+msgstr "Baxtli mijozlar"
+
+#: .\templates\contact.html:18
+msgid ""
+"\n"
+"                                <span>Information</span>\n"
+"                                <h2>Contact Us</h2>\n"
+"                                <p>As you might expect of a company that "
+"began as a high-end interiors contractor, we\n"
+"                                    pay\n"
+"                                    strict attention.</p>\n"
+"                                </div>\n"
+"                                <ul>\n"
+"                                    <li>\n"
+"                                        <h4>America</h4>\n"
+"                                        <p>195 E Parker Square Dr, Parker, "
+"CO 801 <br/>+43 982-314-0958</p>\n"
+"                                    </li>\n"
+"                                    <li>\n"
+"                                        <h4>France</h4>\n"
+"                                        <p>109 Avenue Léon, 63 Clermont-"
+"Ferrand <br/>+12 345-423-9893</p>\n"
+"                                    </li>\n"
+"                                </ul>\n"
+"                            "
+msgstr ""
+"\n"
+"                                <span>Axborot</span>\n"
+"                                <h2>Biz bilan bog'laning</h2>\n"
+"                                <p>Siz kutgan kompaniya sifatida yuqori "
+"sifatli pudratchi sifatida ish boshladik, biz,\n"
+"                                    to'lash\n"
+"                                    jiddiy e'tibor.</p>\n"
+"                                </div>\n"
+"                                <ul>\n"
+"                                    <li>\n"
+"                                        <h4>Amerika</h4>\n"
+"                                        <p>195 E Parker Square Dr, Parker, "
+"CO 801 <br/>+43 982-314-0958</p>\n"
+"                                    </li>\n"
+"                                    <li>\n"
+"                                        <h4>Frantsiya</h4>\n"
+"                                        <p>109 Avenue Léon, 63 Clermont-"
+"Ferrand <br/>+12 345-423-9893</p>\n"
+"                                    </li>\n"
+"                                </ul>\n"
+"                            "
+
+#: .\templates\contact.html:51
+msgid "Send Message"
+msgstr "Xabar yuboring"
+
+#: .\templates\layouts\header.html:9 .\templates\layouts\header.html:46
+msgid "Sign in"
+msgstr "Tizimga kirish"
+
+#: .\templates\layouts\header.html:81
+msgid "Products"
+msgstr "Mahsulotlar"
+
+#: .\templates\layouts\header.html:84
+msgid "Blog"
+msgstr "Blog"
+
+#: .\templates\layouts\header.html:86
+msgid "About"
+msgstr "Haqimizda"
+
+#: .\templates\layouts\header.html:88
+#, fuzzy
+#| msgid "contact"
+msgid "Contact"
+msgstr "Aloqa"

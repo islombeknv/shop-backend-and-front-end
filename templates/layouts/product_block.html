@@ -1,0 +1,60 @@
+{% load my_tags %}
+{% load static %}
+
+<div class="product__item">
+    <div class="product__item__pic set-bg" data-setbg="{{ product.image.url }}">
+        {% if product.is_discount %}
+            <span class="label">Sale</span>
+        {% endif %}
+        {% if product.is_new %}
+            <span class="label {% if product.is_discount %}mt-4{% endif %}">New</span>
+        {% endif %}
+        <ul class="product__hover">
+            <li>
+                <a href="{% url 'products:add-wishlist' pk=product.pk %}?next={{ request.path }}?{{ request.GET.urlencode }}">
+                    {% if product|in_wishlist:request %}
+                        <img src="{% static 'img/icon/heartr.png' %}" alt="">
+                    {% else %}
+                        <img src="{% static 'img/icon/heart.png' %}" alt="">
+                    {% endif %}
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'products:detail' pk=product.pk %}">
+                    <img src="{% static 'img/icon/search.png' %}" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="product__item__text">
+        <h6>{{ product.title }}</h6>
+        <a href="{% url 'products:add-to-cart' pk=product.pk %}?next={{ request.path }}?{{ request.GET.urlencode }}"
+           class="add-cart">
+            {% if product|in_cart:request %}
+            - Remove From cart
+            {% else %}
+            + Add To Cart
+            {% endif %}
+        </a>
+        <div class="rating">
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+        </div>
+        <h5>
+            ${{ product.real_price }}
+            {% if product.is_discount %}
+                <strike class="small">{{ product.price }}</strike>
+            {% endif %}
+        </h5>
+        <div class="product__color__select">
+            {% for color in product.colors.all %}
+                <label style="background: {{ color.code }}">
+                    <input type="radio">
+                </label>
+            {% endfor %}
+        </div>
+    </div>
+</div>

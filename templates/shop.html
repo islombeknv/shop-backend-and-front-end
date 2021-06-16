@@ -1,0 +1,123 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load my_tags %}
+{% block extra_css %}
+    a:hover{
+    cursor:pointer;
+    }
+
+{% endblock %}
+{% block extra_csslink %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+
+{% endblock %}
+{% block content %}
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Shop</h4>
+                        <div class="breadcrumb__links">
+                            <a href="{% url 'pages:home' %}">Home</a>
+                            <span>Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shop Section Begin -->
+    <section class="shop spad">
+        <div class="container">
+            <div class="row">
+                {% include 'layouts/category.html' %}
+                <div class="col-lg-9">
+                    <div class="shop__product__option">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="shop__product__option__left">
+                                    <p>Showing {{ page_obj.start_index }}–{{ page_obj.end_index }}
+                                        of {{ page_obj.paginator.count }}
+                                        results</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="shop__product__option__right">
+                                    <p>Sort by Price:</p>
+                                    <select onchange="addUrlParameter('sort', this.value)">
+                                        <option value="">____</option>
+                                        <option {% if request.GET.sort == 'price' %} selected {% endif %} value="price">
+                                            Low To High
+                                        </option>
+                                        <option {% if request.GET.sort == '-price' %} selected {% endif %}
+                                                                                      value="-price">
+                                            High To Low
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for product in object_list %}
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                {% include 'layouts/product_block.html' %}
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="product__pagination">
+                                {% for page in page_obj.paginator.page_range %}
+                                    <a class="{% if page == page_obj.number %} active {% endif %}"
+                                       onclick="addUrlParameter('page', '{{ page }}')">{{ page }}</a>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Section End -->
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        function addUrlParameter(name, value) {
+            let searchParams = new URLSearchParams(window.location.search)
+            if (searchParams.has(name) && searchParams.get(name) === value) {
+                searchParams.delete(name)
+            } else {
+                searchParams.set(name, value)
+            }
+            window.location.search = searchParams.toString()
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script>
+        $(".js-range-slider").ionRangeSlider({
+            type: "double",
+            grid: true,
+            min: {{ min_price }},
+            max: {{ max_price }},
+            from: {% get_price request 0 %},
+            to: {% get_price request 1 %},
+            prefix: "$",
+            onFinish(data) {
+                let result = data.from.toString() + ';' + data.to.toString()
+                addUrlParameter('price', result);
+            },
+        });
+    </script>
+{% endblock %}

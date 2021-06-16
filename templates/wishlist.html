@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load my_tags %}
+{% block content %}
+
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Favourites</h4>
+                        <div class="breadcrumb__links">
+                            <a href="{% url 'pages:home' %}">Home</a>
+                            <span>Favourites</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        {% for product in object_list %}
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                {% include 'layouts/product_block.html' %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="product__pagination">
+                                {% for page in page_obj.paginator.page_range %}
+                                    <a {% if page == page_obj.number %}
+                                        class="active"{% endif %}
+                                        onclick="addUrlParameter('page', '{{ page }}')">{{ page }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

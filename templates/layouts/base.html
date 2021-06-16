@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <style>
+        .search {
+            position: absolute;
+            top: 80%;
+            left: 60%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-100%) translateY(-103%);
+        }
+
+        .search * {
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .search__wrapper {
+            position: relative;
+        }
+
+        .search__field {
+            width: 50px;
+            height: 50px;
+            color: transparent;
+            font-family: Lato, sans-serif;
+            font-size: 1.10em;
+            padding: 0.35em 50px 0.35em 0;
+            border: 1px solid transparent;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .search__field:focus {
+            position: relative;
+        {#border-bottom-color: #ccc;#} width: 14vw;
+            color: #2b2b2b;
+            cursor: default;
+
+        }
+
+        .search__field:focus ~ .search__icon {
+            background-color: transparent;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .search__icon {
+            position: absolute;
+            top: 1px;
+            right: 2vh;
+            width: 50px;
+            height: 50px;
+            font-size: 1.35em;
+            text-align: center;
+            border-color: transparent;
+            border-radius: 50%;
+            pointer-events: none;
+            display: inline-block;
+            transition: background-color 0.2s ease-in-out;
+            background-color: white;
+        }
+
+        .search__field::-webkit-input-placeholder {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition-property: top, color;
+            transition-duration: .1s;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+
+        .search__field:-moz-placeholder {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition-property: top, color;
+            transition-duration: .1s;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+
+        .search__field::-moz-placeholder {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition-property: top, color;
+            transition-duration: .1s;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+
+        .search__field:-ms-input-placeholder {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition-property: top, color;
+            transition-duration: .1s;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+
+        .search__field::-webkit-input-placeholder[style*=hidden] {
+            color: #83b0c1;
+            font-size: .50em;
+            font-weight: normal;
+            top: -20px;
+            opacity: 1;
+            visibility: visible !important;
+        }
+
+        .search__field:-moz-placeholder[style*=hidden] {
+            color: #83b0c1;
+            font-size: .50em;
+            font-weight: normal;
+            top: -20px;
+            opacity: 1;
+            visibility: visible !important;
+        }
+
+        .search__field::-moz-placeholder[style*=hidden] {
+            color: #83b0c1;
+            font-size: .50em;
+            font-weight: normal;
+            top: -20px;
+            opacity: 1;
+            visibility: visible !important;
+        }
+
+        .search__field:-ms-input-placeholder[style*=hidden] {
+            color: #83b0c1;
+            font-size: .50em;
+            font-weight: normal;
+            top: -20px;
+            opacity: 1;
+            visibility: visible !important;
+        }
+        {% block extra_css %}
+
+        {% endblock %}
+    </style>
+    {% block extra_csslink %}
+
+        {% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+</head>
+
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+{% include 'layouts/header.html' %}
+
+{% block content %}
+
+{% endblock %}
+
+{% include 'layouts/footer.html' %}
+
+<!-- Js Plugins -->
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'js/jquery.slicknav.js' %}"></script>
+<script src="{% static 'js/mixitup.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+{% block extra_js %}
+
+{% endblock %}
+</body>
+
+</html>

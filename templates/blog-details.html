@@ -1,0 +1,235 @@
+{% extends 'layouts/base.html' %}
+
+{% block extra_css %}
+    @import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
+
+    body {
+    font-family: 'Calibri', sans-serif !important
+    }
+
+    .card-no-border .card {
+    border: 0px;
+    border-radius: 4px;
+    {#    -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);#}
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05)
+    }
+
+    .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem
+    }
+
+    .comment-widgets .comment-row:hover {
+    background: rgba(0, 0, 0, 0.02);
+    cursor: pointer
+    }
+
+    .comment-widgets .comment-row {
+    border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+    padding: 15px
+    }
+
+    .comment-text:hover {
+    visibility: hidden
+    }
+
+    .comment-text:hover {
+    visibility: visible
+    }
+
+    .label {
+    padding: 3px 10px;
+    line-height: 13px;
+    color: #ffffff;
+    font-weight: 400;
+    border-radius: 4px;
+    font-size: 75%
+    }
+
+    .round img {
+    border-radius: 100%
+    }
+
+    .label-info {
+    background-color: #1976d2
+    }
+
+    .label-success {
+    background-color: green
+    }
+
+    .label-danger {
+    background-color: #ef5350
+    }
+
+    .action-icons a {
+    padding-left: 7px;
+    vertical-align: middle;
+    color: #99abb4;
+    }
+
+    .action-icons a:hover {
+    color: red;
+    }
+
+    .mt-100 {
+    margin-top: 100px;
+    }
+
+    .mb-100 {
+    margin-bottom: 100px;
+    }
+    .card {
+    border:0px;
+    }
+{% endblock %}
+
+{% block content %}
+
+    <!-- Blog Details Hero Begin -->
+    <section class="blog-hero spad">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <div class="blog__hero__text">
+                        <h2>{{ object.title }}</h2>
+                        <ul>
+                            <li>By {{ object.author.name }}</li>
+                            <li>{{ object.created_at|date:'F d, Y' }}</li>
+                            <li>{{ object.get_comments.count }} Comments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Hero End -->
+
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details spad">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-12">
+                    <div class="blog__details__pic">
+                        <img src="{{ object.banner.url }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="blog__details__content">
+                        <div class="blog__details__share">
+                            <span>share</span>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="youtube"><i class="fa fa-youtube-play"></i></a></li>
+                                <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="blog__details__text">
+                            {{ object.content|safe }}
+                        </div>
+                        <div class="blog__details__option">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="blog__details__author">
+                                        <div class="blog__details__author__pic">
+                                            <img src="{{ object.author.avatar.url }}" alt="">
+                                        </div>
+                                        <div class="blog__details__author__text">
+                                            <h5>{{ object.author.name }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="blog__details__tags">
+                                        {% for tag in object.tags.all %}
+                                            <a href="{% url 'posts:list' %}?tag={{ tag.title }}">#{{ tag.title }}</a>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="comment"  class="blog__details__btns">
+                            <div class="row">
+
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    {% if object.get_prev %}
+                                        <a href="{% url 'posts:detail' pk=object.get_prev.pk %}"
+                                           class="blog__details__btns__item">
+                                            <p><span class="arrow_left"></span> Previous Pod</p>
+                                            <h5>{{ object.get_prev.title }}</h5>
+                                        </a>
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    {% if object.get_next %}
+                                        <a href="{% url 'posts:detail' pk=object.get_next.pk %}"
+                                           class="blog__details__btns__item blog__details__btns__item--next">
+                                            <p>Next Pod <span class="arrow_right"></span></p>
+                                            <h5>{{ object.get_next.title }}</h5>
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container d-flex justify-content-center mb-100">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Recent Comments</h4>
+                                            <h6 class="card-subtitle">Latest Comments section by users</h6>
+                                        </div>
+                                        <div class="comment-widgets m-b-20">
+                                            {% for comment in object.get_comments %}
+                                                <div class="d-flex flex-row comment-row">
+                                                    <div class="p-2"><span class="round"><img
+                                                            src="https://i.imgur.com/uIgDDDd.jpg" alt="user"
+                                                            width="50"></span></div>
+                                                    <div class="comment-text w-100">
+                                                        <h5 class="text-primary">{{ comment.name }}</h5>
+                                                        <div class="comment-footer"><span class="date"><i
+                                                                class="far fa-calendar-alt"></i>
+                                                            {{ comment.created_on|date:'F d, Y' }}</span>
+                                                            </div>
+                                                        <p class="m-b-5 m-t-10">{{ comment.comment }}</p>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__details__comment">
+                            <h4>Leave A Comment</h4>
+                            <form method="post" action="{% url 'posts:comment' pk=object.pk %}#comment">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <input name="name" type="text" placeholder="Name" >
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <input name="email" type="email" placeholder="Email">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <input name="phone" type="number" placeholder="Phone">
+                                    </div>
+                                    <div class="col-lg-12 text-center">
+                                        <textarea name="comment" placeholder="Comment"></textarea>
+                                        <button type="submit" class="site-btn">Post Comment</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Section End -->
+
+{% endblock %}

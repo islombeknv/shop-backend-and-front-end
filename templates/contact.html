@@ -1,0 +1,61 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% block content %}
+    <!-- Map Begin -->
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191885.50263874594!2d69.1392822195783!3d41.2825125454214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1620294339306!5m2!1sen!2s"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <!-- Map End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__text">
+                        <div class="section-title">
+                            {% blocktrans %}
+                                <span>Information</span>
+                                <h2>Contact Us</h2>
+                                <p>As you might expect of a company that began as a high-end interiors contractor, we
+                                    pay
+                                    strict attention.</p>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <h4>America</h4>
+                                        <p>195 E Parker Square Dr, Parker, CO 801 <br/>+43 982-314-0958</p>
+                                    </li>
+                                    <li>
+                                        <h4>France</h4>
+                                        <p>109 Avenue Léon, 63 Clermont-Ferrand <br/>+12 345-423-9893</p>
+                                    </li>
+                                </ul>
+                            {% endblocktrans %}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__form">
+                        <form method="post" action="#">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input name="{% trans 'name' %}" type="text" placeholder="Name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input name="{% trans 'email' %}" type="text" placeholder="Email">
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea name="{% trans 'message' %}" placeholder="Message"></textarea>
+                                    <button type="submit" class="site-btn">{% trans 'Send Message' %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+{% endblock %}
