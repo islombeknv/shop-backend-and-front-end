@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-(=_bg+*!@r#43g1gd%b=7gj^m4y(e8aw69rpa1=vabsy(%6ml#'
 
 DEBUG = True
 
@@ -128,8 +128,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'mobzoomtv@gmail.com'
-EMAIL_HOST_PASSWORD = 'P19990430$'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
