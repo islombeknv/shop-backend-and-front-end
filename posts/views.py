@@ -24,7 +24,7 @@ class PostDetailView(DetailView):
     template_name = 'blog-details.html'
 
 
-class CommetCreateView(CreateView):
+class CommentCreateView(CreateView):
     template_name = 'blog-details.html'
     form_class = CommentForm
 
