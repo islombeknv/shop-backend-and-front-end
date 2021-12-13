@@ -113,9 +113,9 @@ class ProductModel(models.Model):
         return ProductModel.objects.filter(
             pk__in=cart)
 
-    # def get_related_products(self):
+    def get_related_products(self):
     #     return self.category.products.exclude(pk=self.pk)
-    #     return ProductModel.objects.filter(category_id=self.category_id).exclude(pk=self.pk)
+        return ProductModel.objects.filter(category_id=self.category_id).exclude(pk=self.pk)
 
     def __str__(self):
         return self.title
